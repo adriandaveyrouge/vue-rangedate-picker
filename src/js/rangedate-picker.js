@@ -294,12 +294,11 @@ export default {
       this.activeYearStart))
       if (this.dateRange.start && this.dateRange.end) {
         this.presetActive = ''
+        this.$emit('selected', this.dateRange)
         if (this.isCompact) {
           this.showMonth = false
         }
       }
-
-      this.$emit('selected', this.dateRange)
     },
     selectSecondItem (r, i) {
       const result = this.getDayIndexInMonth(r, i, this.startNextMonthDay) + 1
@@ -307,9 +306,8 @@ export default {
       this.activeYearEnd))
       if (this.dateRange.start && this.dateRange.end) {
         this.presetActive = ''
+        this.$emit('selected', this.dateRange)
       }
-
-      this.$emit('selected', this.dateRange)
     },
     isDateSelected (r, i, key, startMonthDay, endMonthDate) {
       const result = this.getDayIndexInMonth(r, i, startMonthDay) + 1
