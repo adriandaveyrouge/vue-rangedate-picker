@@ -247,6 +247,7 @@ export default {
     toggleCalendar: function () {
       if (this.dateRange.end === null) {
         this.dateRange.end = this.dateRange.start
+        this.$emit('selected', this.dateRange)
       }
 
       if (this.isCompact) {
