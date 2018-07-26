@@ -6,6 +6,18 @@
         <h2>{{captions.title}}</h2>
         <i class="close" @click="toggleCalendar()">&times</i>
       </div>
+      <div class="calendar-range" :class="{'calendar-range-mobile ': isCompact}" v-if="!showMonth || !isCompact">
+        <ul class="calendar_preset">
+          <li
+            class="calendar_preset-ranges"
+            v-for="(item, idx) in finalPresetRanges"
+            :key="idx"
+            @click="updatePreset(item)"
+            :class="{'active-preset': presetActive === item.label}">
+            {{item.label}}
+          </li>
+        </ul>
+      </div>
       <div class="calendar-wrap">
         <div class="calendar_month_left" :class="{'calendar-left-mobile': isCompact}" v-if="showMonth">
           <div class="months-text">
@@ -39,19 +51,6 @@
           </ul>
         </div>
       </div>
-      <div class="calendar-range" :class="{'calendar-range-mobile ': isCompact}" v-if="!showMonth || !isCompact">
-        <ul class="calendar_preset">
-          <li
-            class="calendar_preset-ranges"
-            v-for="(item, idx) in finalPresetRanges"
-            :key="idx"
-            @click="updatePreset(item)"
-            :class="{'active-preset': presetActive === item.label}">
-            {{item.label}}
-          </li>
-        </ul>
-      </div>
-      
     </div>
   </div>
 </template>
