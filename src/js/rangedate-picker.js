@@ -245,6 +245,10 @@ export default {
   },
   methods: {
     toggleCalendar: function () {
+      if (this.dateRange.end === null) {
+        this.dateRange.end = this.dateRange.start
+      }
+
       if (this.isCompact) {
         this.showMonth = !this.showMonth
         return
