@@ -33,7 +33,7 @@ const presetRangeLabel = {
 
 const defaultCaptions = {
   'title': 'Choose Dates',
-  'ok_button': 'ApplyTEST'
+  'ok_button': 'Apply'
 }
 
 const defaultStyle = {
@@ -298,6 +298,8 @@ export default {
           this.showMonth = false
         }
       }
+
+      this.$emit('selected', this.dateRange)
     },
     selectSecondItem (r, i) {
       const result = this.getDayIndexInMonth(r, i, this.startNextMonthDay) + 1
@@ -306,6 +308,8 @@ export default {
       if (this.dateRange.start && this.dateRange.end) {
         this.presetActive = ''
       }
+
+      this.$emit('selected', this.dateRange)
     },
     isDateSelected (r, i, key, startMonthDay, endMonthDate) {
       const result = this.getDayIndexInMonth(r, i, startMonthDay) + 1
