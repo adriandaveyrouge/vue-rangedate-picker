@@ -33,7 +33,7 @@ const presetRangeLabel = {
 
 const defaultCaptions = {
   'title': 'Choose Dates',
-  'ok_button': 'Apply'
+  'ok_button': 'ApplyTEST'
 }
 
 const defaultStyle = {
