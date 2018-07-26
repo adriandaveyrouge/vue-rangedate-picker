@@ -359,6 +359,7 @@ export default {
       this.activeMonthStart = this.dateRange.start.getMonth()
       this.activeYearStart = this.dateRange.start.getFullYear()
       this.activeYearEnd = this.dateRange.end.getFullYear()
+      this.$emit('selected', this.dateRange)
     },
     setDateValue: function () {
       this.$emit('selected', this.dateRange)
