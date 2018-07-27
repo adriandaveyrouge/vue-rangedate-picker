@@ -248,7 +248,7 @@ export default {
       if (this.dateRange.end === null) {
         const newEndDate = new Date(this.dateRange.start)
 
-        this.dateRange.end = new Date(newEndDate.getFullYear(), newEndDate.getMonth(), newEndDate.getDate() + 1, 23, 59)
+        this.dateRange.end = new Date(newEndDate.getFullYear(), newEndDate.getMonth(), newEndDate.getDate(), 23, 59)
         this.$emit('selected', this.dateRange)
       }
 
