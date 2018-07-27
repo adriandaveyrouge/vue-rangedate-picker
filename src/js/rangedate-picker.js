@@ -312,6 +312,9 @@ export default {
       this.dateRange = Object.assign({}, this.dateRange, this.getNewDateRange(result, this.startNextActiveMonth,
       this.activeYearEnd))
       if (this.dateRange.start && this.dateRange.end) {
+        const newEndDate = new Date(this.dateRange.end)
+
+        this.dateRange.end = new Date(newEndDate.getFullYear(), newEndDate.getMonth(), newEndDate.getDate(), 23, 59)
         this.presetActive = ''
         this.$emit('selected', this.dateRange)
       }
