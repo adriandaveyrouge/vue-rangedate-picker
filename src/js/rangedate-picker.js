@@ -246,7 +246,9 @@ export default {
   methods: {
     toggleCalendar: function () {
       if (this.dateRange.end === null) {
-        this.dateRange.end = this.dateRange.start
+        const newEndDate = new Date(this.dateRange.start)
+
+        this.dateRange.end = new Date(newEndDate.getFullYear(), newEndDate.getMonth(), newEndDate.getDate() + 1, 23, 59)
         this.$emit('selected', this.dateRange)
       }
 
